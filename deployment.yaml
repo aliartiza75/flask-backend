@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: htbackendapi
+  name: htbackend
   labels:
-    app: BEAPI
+    app: HTBE
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: BEAPI
+      app: HTBE
   template:
     metadata:
       labels:
-        app: BEAPI
+        app: HTBE
     spec:
       containers:
-      - name: backendapi
+      - name: htbackend
         env:
         - name: FLASK_ENV
           value: "development"
@@ -25,6 +25,6 @@ spec:
           value: "5001"
         - name: Name
           value: "Irtiza"  
-        image: datetime_api:0.0.1
+        image: ht-be:0.0.1
         ports:
         - containerPort: 5001

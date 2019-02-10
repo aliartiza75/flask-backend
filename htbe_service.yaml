@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: backendapiservice
+  name: htbackendservice
 spec:
   selector:
-    app: BEAPI
+    app: HTBE
   ports:
-    - name: portss
+    - name: ports
       port: 5001
       targetPort: 5001
   type: NodePort
