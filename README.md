@@ -1,7 +1,6 @@
 # HT Backend Repository
 
-This repository contains backend logic and kubernetes manifests. 
-
+This repository contains backend logic and kubernetes manifests. I have used `minikube` for this project.
 
 # Guidelines for containerizing backend 
 
@@ -27,7 +26,7 @@ sudo kubectl apply -f deployment.yaml
 sudo kubectl apply -f htbe_service.yaml 
 ```
 
-* Validating whether application is running or not
+* Validating whether application is running or not. Use the command given below from host machine on which kubernetes is running
 ```
 curl -X GET "http://<ip>:<port>/datetime"
 ```
