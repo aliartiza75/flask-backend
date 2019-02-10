@@ -1,6 +1,6 @@
 # HT Backend Repository
 
-This repository contains backend logic and kubernetes manifests. I have used `minikube` for this project.
+This repository contains backend logic and kubernetes manifests. I have used `minikube` for this project. Installation steps is given in this [gist](https://gist.github.com/aliartiza75/3a34f059de62c7de04727dae6a363ea8)
 
 # Guidelines for containerizing backend 
 
