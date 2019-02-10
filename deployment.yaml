@@ -1,25 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: irti
+  name: htbackendapi
   labels:
-    app: node_docker
+    app: BEAPI
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: node_docker
+      app: BEAPI
   template:
     metadata:
       labels:
-        app: node_docker
+        app: BEAPI
     spec:
       containers:
-      - name: nodedocker
-        image: aliartiza75/node_docker
+      - name: backendapi
+        env:
+        - name: FLASK_ENV
+          value: "development"
+        - name: FLASK_HOST_IP
+          value: "0.0.0.0"
+        - name: FLASK_HOST_PORT
+          value: "5001"
+        - name: Name
+          value: "Irtiza"  
+        image: datetime_api:0.0.1
         ports:
-        - containerPort: 80
-      - name: staticweb
-        image: aliartiza75/staticweb
-        ports:
-        - containerPort: 80
+        - containerPort: 5001
