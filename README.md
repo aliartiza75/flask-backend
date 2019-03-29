@@ -30,3 +30,4 @@ sudo kubectl apply -f htbe_service.yaml
 ```
 curl -X GET "http://<ip>:<port>/datetime"
 ```
+ABC
