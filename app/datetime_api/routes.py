@@ -19,7 +19,7 @@ mod = Blueprint('datetime_api', __name__)
 # Extracting environment variable
 name = os.environ['Name']
 
-@mod.route('/datetime', methods=['GET'])
+@mod.route('/', methods=['GET'])
 def health_check():
     '''
     It will be used to verify the status of api
