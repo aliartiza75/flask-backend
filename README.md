@@ -30,4 +30,12 @@ sudo kubectl apply -f htbe_service.yaml
 ```
 curl -X GET "http://<ip>:<port>/datetime"
 ```
-ABC
+
+# Guidelines for helm charts deployment
+* To create a helm chart folder:
+
+```
+helm create <chart-name>
+```
+
+
