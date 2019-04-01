@@ -35,7 +35,7 @@ curl -X GET "http://<ip>:<port>/datetime"
 * To create a helm chart folder:
 
 ```
-helm create <chart-name>
+helm create <app-name>
 ```
 
 
