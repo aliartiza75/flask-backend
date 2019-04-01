@@ -32,6 +32,13 @@ curl -X GET "http://<ip>:<port>/datetime"
 ```
 
 # Guidelines for helm charts deployment
+* Helm installation guidelines [link](https://helm.sh/docs/install/#installing-the-helm-client)
+
+* Once the helm is installed, use the command given below to install tiller in kubernetes cluster:
+```bash
+helm init
+```
+
 * To create a helm chart folder:
 
 ```
