@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ht-be
+  repository: aliartiza75/ht-be
   tag: 0.0.3
   pullPolicy: IfNotPresent
 
@@ -14,9 +14,9 @@ fullnameOverride: "api"
 
 deploymentInfo:
   envName: "development"
-  hostIP: 0.0.0.0
+  hostIP: "0.0.0.0"
   hostPort: 5001
-  userName: "Irtiza"
+  name: "irtiza"
 
 service:
   type: NodePort

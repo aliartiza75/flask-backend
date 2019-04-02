@@ -24,26 +24,26 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env: 
-            - name: "FLASK_ENV"
+            - name: FLASK_ENV
               value: {{ .Values.deploymentInfo.envName }}
-            - name: "FLASK_HOST_IP"
+            - name: FLASK_HOST_IP
               value: {{ .Values.deploymentInfo.hostIP }}
-            - name: "FLASK_HOST_PORT"
-              value: {{ .Values.deploymentInfo.hostPort }}
-            - name: "Name"
-              value: {{ .Values.deploymentInfo.userName }}
+            - name: Name
+              value: {{ .Values.deploymentInfo.name }}
+            - name: FLASK_HOST_PORT
+              value: "5001"
           ports:
             - name: http
-              containerPort: {{ .Values.deploymentInfo.hostPort }}
+              containerPort: 5001
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: "9000"
+              port: http
           readinessProbe:
             httpGet:
               path: /
-              port: "9001"
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
