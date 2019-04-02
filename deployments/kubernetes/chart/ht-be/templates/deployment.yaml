@@ -23,9 +23,18 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env: 
+            - name: FLASK_ENV
+              value: {{ .Values.deploymentInfo.envName }}
+            - name: FLASK_HOST_IP
+              value: {{ .Values.deploymentInfo.hostIP }}
+            - name: Name
+              value: {{ .Values.deploymentInfo.name }}
+            - name: FLASK_HOST_PORT
+              value: "5001"
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 5001
               protocol: TCP
           livenessProbe:
             httpGet:

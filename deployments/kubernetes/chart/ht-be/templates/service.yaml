@@ -11,9 +11,10 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: {{ .Values.service.port }}
       protocol: TCP
       name: http
   selector:
     app.kubernetes.io/name: {{ include "ht-be.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
+  type: NodePort

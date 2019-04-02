@@ -30,4 +30,42 @@ sudo kubectl apply -f htbe_service.yaml
 ```
 curl -X GET "http://<ip>:<port>/datetime"
 ```
-ABC
+
+# Guidelines for helm charts deployment
+* Helm installation guidelines [link](https://helm.sh/docs/install/#installing-the-helm-client)
+
+* Once the helm is installed, use the command given below to install tiller in kubernetes cluster:
+```bash
+helm init
+```
+
+* To create a helm chart folder:
+
+```bash
+helm create <app-name>
+```
+
+* To dry run the helm chart for debugging:
+```bash
+sudo helm install --dry-run --debug <chart-directory> 
+```
+
+* To purge a release
+```bash
+sudo helm del --purge <release-name>
+```
+
+* To check the status of a release
+```bash
+sudo helm ls --all <release-name>
+```
+
+* To search a helm package name
+```bash
+sudo helm search <package-name>
+```
+
+* To create a package from the helm charts folder
+```bash
+sudo helm package <helm-charts-package-folder-path>
+```
