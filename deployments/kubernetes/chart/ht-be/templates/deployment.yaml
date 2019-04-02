@@ -23,18 +23,27 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env: 
+            - name: "FLASK_ENV"
+              value: {{ .Values.deploymentInfo.envName }}
+            - name: "FLASK_HOST_IP"
+              value: {{ .Values.deploymentInfo.hostIP }}
+            - name: "FLASK_HOST_PORT"
+              value: {{ .Values.deploymentInfo.hostPort }}
+            - name: "Name"
+              value: {{ .Values.deploymentInfo.userName }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.deploymentInfo.hostPort }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: "9000"
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: "9001"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

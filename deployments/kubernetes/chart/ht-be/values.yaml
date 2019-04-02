@@ -5,16 +5,22 @@
 replicaCount: 1
 
 image:
-  repository: aliartiza75/ht-be
+  repository: ht-be
   tag: 0.0.3
   pullPolicy: IfNotPresent
 
-nameOverride: "htbe"
-fullnameOverride: "htbe"
+nameOverride: "api"
+fullnameOverride: "api"
+
+deploymentInfo:
+  envName: "development"
+  hostIP: 0.0.0.0
+  hostPort: 5001
+  userName: "Irtiza"
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 5001
 
 ingress:
   enabled: false
