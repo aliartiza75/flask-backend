@@ -5,12 +5,12 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: aliartiza75/ht-be
+  tag: 0.0.3
   pullPolicy: IfNotPresent
 
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "htbe"
+fullnameOverride: "htbe"
 
 service:
   type: ClusterIP
