@@ -6,11 +6,11 @@ replicaCount: 1
 
 image:
   repository: aliartiza75/ht-be
-  tag: 0.0.3
+  tag: 0.0.4
   pullPolicy: IfNotPresent
 
-nameOverride: "api"
-fullnameOverride: "api"
+nameOverride: "ht-be"
+fullnameOverride: "ht-be"
 
 deploymentInfo:
   envName: "development"
