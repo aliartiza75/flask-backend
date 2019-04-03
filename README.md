@@ -69,3 +69,9 @@ sudo helm search <package-name>
 ```bash
 sudo helm package <helm-charts-package-folder-path>
 ```
+
+
+# Important Notes
+* Start the minikube cluster in the virtual machine drive in none mode [--vm-driver=none], otherwise services will not be accessible.
+* Minikube will pull images from the dockerhub.
+* In some cases minikube cluster doesn't work properly, one quick fix is to delete the cluster and restart the minikube cluster.
