@@ -6,8 +6,6 @@ pipeline {
             steps {
                 echo 'Building..'
                 pwd
-                pwd
-                pwd
             }
         }
     }
