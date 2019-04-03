@@ -29,3 +29,14 @@ def health_check():
     response['datetime'] = datetime.datetime.strftime(dt, "%Y-%m-%d %H:%M:%S") + ", Hello " + str(name)
     response['message'] = "Current datetime has been returned"
     return jsonify(response), status.HTTP_200_OK
+
+@mod.route('/', methods=['GET'])
+def default_controller():
+    '''
+    It is the default route
+    '''
+    response = {}
+    dt = datetime.datetime.now()
+    response['datetime'] = datetime.datetime.strftime(dt, "%Y-%m-%d %H:%M:%S") + ", Hello " + str(name)
+    response['message'] = "Current datetime has been returned"
+    return jsonify(response), status.HTTP_200_OK
