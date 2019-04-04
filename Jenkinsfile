@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'pip3 install pycodestyle'
+                sh 'lsb_release -a'
+                sh 'python3 --version'
+                sh 'pip install pycodestyle'
                 sh './pycheck'
             }
         }
