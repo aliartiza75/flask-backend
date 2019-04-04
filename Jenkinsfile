@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'python:3.6-jessie' }
-    }
+    agent any
     stages {
         stage('build') {
             steps {
