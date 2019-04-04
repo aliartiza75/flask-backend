@@ -5,7 +5,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'sudo pip3 install pycodestyle'
+                sh './pycheck'
             }
         }
     }
