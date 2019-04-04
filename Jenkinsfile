@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                pwd()
-                bash 'apt update'
+                sh 'pwd'
                 sh 'python3 --version'
                 sh 'pip install pycodestyle'
                 sh './pycheck'
