@@ -1,9 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker { 
+            image 'python:3.5.1' 
+        }
+    }
     stages {
         stage('build') {
             steps {
-                sh 'sudo pip3 install pycodestyle'
+                sh 'pwd'
+                sh 'pip install pycodestyle'
                 sh './pycheck'
             }
         }
