@@ -19,6 +19,7 @@ mod = Blueprint('datetime_api', __name__)
 # Extracting environment variable
 name = os.environ['Name']
 
+
 @mod.route('/datetime', methods=['GET'])
 def health_check():
     '''
@@ -29,6 +30,7 @@ def health_check():
     response['datetime'] = datetime.datetime.strftime(dt, "%Y-%m-%d %H:%M:%S") + ", Hello " + str(name)
     response['message'] = "Current datetime has been returned"
     return jsonify(response), status.HTTP_200_OK
+
 
 @mod.route('/', methods=['GET'])
 def default_controller():
