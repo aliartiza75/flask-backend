@@ -9,9 +9,8 @@
 
 # sys modules
 import os
-import json
 from flask import Blueprint
-from flask import request, jsonify, abort
+from flask import jsonify
 from flask_api import status
 import datetime
 mod = Blueprint('datetime_api', __name__)
