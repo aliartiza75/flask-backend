@@ -19,7 +19,7 @@ deploymentInfo:
   name: "irtiza"
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 5001
 
 ingress:
