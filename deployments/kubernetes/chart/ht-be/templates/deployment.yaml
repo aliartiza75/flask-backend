@@ -7,6 +7,8 @@ metadata:
     helm.sh/chart: {{ include "ht-be.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    kubernetes.io/tls-acme: {{ .Values.ingress.annotations.tlsAcme }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
