@@ -4,15 +4,8 @@ kind: Ingress
 metadata:
   name: ht-be
   annotations:
-    kubernetes.io/tls-acme: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 256m
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: 120s
-    nginx.ingress.kubernetes.io/proxy-read-timeout: 60s
 spec:
-  tls:
-  - hosts:
-    - ht-be.domain.com
-    secretName: ht-be.domain.com
+  ingressClassName: nginx-internal
   rules:
   - host: ht-be.domain.com
     http:
@@ -23,4 +16,4 @@ spec:
           service:
             name: ht-be
             port: 
-              number: 80
+              number: 5001
