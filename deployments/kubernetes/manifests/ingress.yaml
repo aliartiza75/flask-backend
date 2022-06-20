@@ -1,24 +1,19 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ht-be
   annotations:
-    kubernetes.io/tls-acme: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 256m
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: 120s
-    nginx.ingress.kubernetes.io/proxy-read-timeout: 60s
-    kubernetes.io/ingress.class: "nginx-external"
 spec:
-  tls:
-  - hosts:
-    - ht-be.domain.com
-    secretName: ht-be.domain.com
+  ingressClassName: nginx-internal
   rules:
   - host: ht-be.domain.com
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: ht-be
-          servicePort: 80
+          service:
+            name: ht-be
+            port: 
+              number: 5001

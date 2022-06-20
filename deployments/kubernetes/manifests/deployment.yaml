@@ -25,6 +25,6 @@ spec:
           value: "5001"
         - name: Name
           value: "Irtiza"  
-        image: ht-be:0.0.1
+        image: aliartiza75/ht-be:0.0.5
         ports:
         - containerPort: 5001
