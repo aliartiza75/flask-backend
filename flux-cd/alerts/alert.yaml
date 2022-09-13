@@ -1,0 +1,13 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Alert
+metadata:
+  name: htbackend
+  namespace: default
+spec:
+  summary: "Flask Backend Portal Deployment Notification"
+  providerRef:
+    name: googlechat-htbackend
+  eventSeverity: info
+  eventSources:
+    - kind: Kustomization
+      name: htbackend
