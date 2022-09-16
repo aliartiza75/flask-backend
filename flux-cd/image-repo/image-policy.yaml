@@ -1,0 +1,15 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: htbackend
+  namespace: default
+spec:
+  imageRepositoryRef:
+    name: htbackend
+  filterTags:
+    pattern: '^^v(?P<ts>.*)'
+    extract: '$ts'
+  policy:
+    numerical:
+      order: asc
+

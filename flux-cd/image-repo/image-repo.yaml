@@ -1,0 +1,10 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: htbackend
+  namespace: default
+spec:
+  image: htbackend
+  interval: 10s
+  secretRef:
+    name: registry-access-htbackend
