@@ -25,6 +25,6 @@ spec:
           value: "5001"
         - name: Name
           value: "Irtiza"  
-        image: aliartiza75/ht-be:0.0.5
+        image: aliartiza75/ht-be:0.0.5 # {"$imagepolicy": "<namespace>:<image-policy-name>"}
         ports:
         - containerPort: 5001
